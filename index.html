@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/0408f82cf7.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+
+    <link rel="stylesheet" href="./css/estilos.css" />
+    <script defer src="./js/productos.js"></script>
+    <title>Tech-Shop</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <a href="#"><i class="fa-solid fa-headphones logo"></i></a>
+      <nav>
+        <ul class="navbar">
+          <li><a href="#" class="active">Inicio</a></li>
+          <li><a href="./shop.html">Tienda</a></li>
+          <li><a onclick="alert('En desarrollo')">Acerda de</a></li>
+          <li><a onclick="alert('En desarrollo')">Contacto</a></li>
+          <li>
+            <a href="./carrito.html"
+              ><i class="fa-solid fa-bag-shopping" id="carritoContenedor"></i
+            ></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section class="hero">
+      <div class="text-hero">
+        <h4>¡Bienvenidos!</h4>
+        <h2>Ofertas de gran valor</h2>
+        <h1>En todos los productos!</h1>
+        <p>Hasta 50% off con cupones</p>
+        <button onclick="buscarProducto()">Comprar Ahora</button>
+      </div>
+      <div>
+        <img src="/multimedia/auris.png" class="auris" />
+      </div>
+    </section>
+    <section class="destacadas section-p1">
+      <div class="dest-box">
+        <img src="./multimedia/enviogratis.svg" />
+        <h6>Envio Gratis</h6>
+      </div>
+      <div class="dest-box">
+        <img src="./multimedia/pedido.svg" />
+        <h6>Pedidos Online</h6>
+      </div>
+      <div class="dest-box">
+        <img src="./multimedia/ahorra.svg" />
+        <h6>Ahorra Dinero</h6>
+      </div>
+      <div class="dest-box">
+        <img src="./multimedia/promociones.svg" />
+        <h6>Promociones</h6>
+      </div>
+    </section>
+    <section class="product1 section-p1">
+      <h2>Productos Destacados</h2>
+      <p>Auriculares</p>
+      <div class="pro-container">
+        <div class="prod">
+          <img src="./multimedia/aurisplata.webp" />
+          <div class="des">
+            <span>Samsung</span>
+            <div class="estrellas">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>$40,000</h4>
+          </div>
+        </div>
+        <div class="prod">
+          <img src="./multimedia/aurishaylou.webp" />
+          <div class="des">
+            <span>Haylou</span>
+            <h5>
+              Auriculares in-ear gamer inalámbricos Haylou GT Series GT1 negro
+            </h5>
+            <div class="estrellas">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>$5000</h4>
+          </div>
+        </div>
+        <div class="prod">
+          <img src="./multimedia/aurisxiaomi.webp" />
+          <div class="des">
+            <span>Xiaomi</span>
+            <h5>Auriculares in-ear inalámbricos Xiaomi Redmi Buds 3 blanco</h5>
+            <div class="estrellas">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>$7990</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="banner1">
+        <!-- <h2>Modelos Nuevos</h2> -->
+        <button><a href="./shop.html">Ir a Tienda</a></button>
+      </div>
+    </section>
+    <footer class="section-p1">
+      <div class="col">
+        <h4>Contacto</h4>
+        <p>Direccion: Roma 586, Cordoba, Argentina</p>
+        <p>Horarios: 09:00 - 18:00, Lun - Sab</p>
+        <h4>Seguinos</h4>
+        <div class="icon">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fab fa-youtube"></i>
+        </div>
+      </div>
+
+      <div class="col">
+        <h4>Acerca de</h4>
+        <a href="#">Sobre nosotros</a>
+        <a href="#">Contacto</a>
+        <a href="#">Informacion de Envio</a>
+      </div>
+
+      <div class="col">
+        <h4>Mi Cuenta</h4>
+        <a href="#">Iniciar Sesion</a>
+        <a href="#">Ver Carro</a>
+        <a href="#">Ayuda</a>
+      </div>
+
+      <div class="col install">
+        <h4>Instalar App</h4>
+        <p>Desde App Store o Google Play</p>
+        <div class="row">
+          <img src="./multimedia/app.jpg" />
+          <img src="./multimedia/play.jpg" />
+        </div>
+        <p>Seguridad en tu Compra</p>
+        <img src="./multimedia/pay.png" />
+      </div>
+
+      <div class="copyright">
+        <p>© 2022, Creado y Diseñado por Mariel Boher</p>
+      </div>
+    </footer>
+  </body>
+</html>
