@@ -115,7 +115,7 @@ body{
     color: #088170;
 }
 .text-hero button{
-    background-image: url("/multimedia/button.png");
+    background-image: url("../multimedia/button.png");
     background-color: transparent;
     color: #088170;
     border: 0;
@@ -259,7 +259,7 @@ body{
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-image: url("/multimedia/banner4.jpg");
+    background-image: url("../multimedia/banner4.jpg");
     width: 100%;
     height: 50vh;
     background-size: cover;
@@ -349,7 +349,7 @@ footer a:hover {
 /* tienda */
 
 .page-header{
-    background-image: url("/multimedia/banner2.jpg");
+    background-image: url("../multimedia/banner2.jpg");
     width: 100%;
     height: 40vh;
     background-size: cover;
