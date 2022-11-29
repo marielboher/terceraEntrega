@@ -117,13 +117,16 @@ body{
 .text-hero button{
     background-image: url("../multimedia/button.png");
     background-color: transparent;
-    color: #088170;
     border: 0;
     padding: 14px 80px 14px 65px;
     background-repeat: no-repeat;
     cursor: pointer;
     font-weight: 700;
     font-size: 15px;
+}
+.text-hero button a{
+    text-decoration: none;
+    color: #088170;
 }
 
 /* destacadas */
@@ -280,6 +283,10 @@ body{
    margin-top: 150px;
 }
 
+.banner1 button a{
+    text-decoration: none;
+    color: #088170;
+}
 .banner1 button:hover{
    transform: scale(1.1);
 }
