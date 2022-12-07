@@ -53,6 +53,7 @@ body{
     position: sticky;
     top: 0;
     left: 0;
+    grid-area: header;
 }
 
 .navbar{
@@ -93,6 +94,44 @@ body{
 }
 
 /* home */
+.container-i {  
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: min-content min-content min-content auto;
+    gap: 5px 5px;
+    grid-template-areas:
+      "hero img"
+      "des-box des-box"
+      "prod-des prod-des"
+      "banner banner"
+  }
+  
+  .hero {
+      grid-area: 
+      hero; }
+  
+  .img { 
+      grid-area: img; 
+      height: 90vh;
+      width: 100%;
+      padding: 0 80px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  
+  .destacadas { 
+      grid-area: des-box; 
+    }
+  
+  .prod-des { 
+      grid-area: prod-des;
+     }
+  
+  .banner {
+       grid-area: banner; 
+    }
+  
 
 .hero{
     height: 90vh;
@@ -185,8 +224,7 @@ body{
 
 .prod{
     width: 17%;
-    max-width: 200px;
-    height: 50%;
+    height: 420px;
     padding: 10px 12px;
     border: 1px solid #cce7d0;
     border-radius: 10px;
@@ -197,6 +235,30 @@ body{
 }
 .prod:hover{
     box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+}
+.prod-i{
+    width: 18%;
+    height: 350px;
+    padding: 10px 12px;
+    border: 1px solid #cce7d0;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 15px 0;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+    transition: 0.2s ease;
+    background-color: #e3e6f3;
+}
+.prod-i img{
+    width: 100%;
+    max-height: 200px;
+    border-radius: 20px;
+}
+.prod-i button{
+    border: none;
+    background-color: #e3e6f3;
+}
+.prod-i button:hover{
+    transform: scale(1.1);
 }
 
 .cont-img{
@@ -221,14 +283,15 @@ body{
     text-align: start;
     padding: 10px 0;
 }
-
+.des p{
+    margin: 0;
+}
 .des span{
    color: #686063;
    font-size: 12px;
 }
 
 .des h5{
-    padding-top: 7px;
     color: #1a1a1a;
     font-size: 14px;
 }
@@ -239,7 +302,7 @@ body{
 }
 
 .des h4{
-   padding-top: 7px;
+   padding-top: 2px;
    font-size: 15px;
    font-weight: 700;
    color: #088170;
@@ -252,13 +315,13 @@ body{
     border-radius: 50px;
     background-color: #e8f6ea;
     color: #088170;
+    margin-bottom: 5px;
 }
 
 /* banners */
 
-.banner1{
+.banner{
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -298,6 +361,7 @@ footer{
     flex-wrap: wrap;
     justify-content: space-between;
     background-color: #ffff;
+    grid-area: footer;
 }
 
 footer .col{
@@ -386,7 +450,6 @@ footer a:hover {
 .btnBusqueda{
     border: none;
     background-color: transparent;
-    
 }
 
 .btnBusqueda i{
@@ -396,9 +459,6 @@ footer a:hover {
     
 }
 
-/* .page-header h2{
-
-} */
 
 /* about */
 
@@ -421,6 +481,43 @@ footer a:hover {
 .page-about p{
     color: #ffff;
 
+}
+.about-head{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-head img{
+    height: 300px;
+}
+.about-head h2{
+    color: #ffff;
+    font-size: 25px;
+    background-color: #465b5291;
+    text-align: center;
+    border-radius: 5px;
+}
+.about-headp{
+    color: #686063;
+}
+.about-s2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.about-s2 img{
+    height: 350px;
+}
+.about-s2 p{
+    background-color: #465b5294;
+    height: 150px;
+    width: 450px;
+    color: #ffff;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
 }
 
 /* carrito */
@@ -479,6 +576,7 @@ footer a:hover {
 #cart table .btn-add{
     border: none;
     color: #088170;
+    background-color: #e3e6f3;
 }
 
 .vaciarCarrito{
@@ -488,15 +586,65 @@ footer a:hover {
     padding: 20px;
 }
 .vaciarCarrito button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: none;
     height: 30px;
-    width: 120px;
-    background-color: #3f8a80a9;
-    color: #ffff;
+    width: 90px;
+    background-color: #ffebf0;
+    color: #465b52;
     border-radius: 5px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    font-size: 11px;
 }
 
-
+.total-compra{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.total-compra button{
+    border: none;
+    background-color: #088170;
+    color: #ffff;
+    height: 30px;
+    width: 90px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 700;
+}
+.total-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.carrito-p{
+    text-align: center;
+    color: #465b52;
+}
 /* queries */
 
+@media screen and (max-width: 700px){
+    .container-i {  
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: min-content min-content min-content min-content auto;
+        gap: 5px 5px;
+        grid-template-areas:
+          "hero"
+          "img"
+          "des-box"
+          "prod-des"
+          "banner";
+      }
+
+      
+    .img{
+        margin-top: 5px;
+        height: 350px;
+        margin-left: 40px;
+    }
+  
+}
