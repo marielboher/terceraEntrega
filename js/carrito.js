@@ -1,14 +1,13 @@
 const vaciarCarrito = document.querySelector("#vaciarCarrito");
+const tbody = document.querySelector("#tabla");
 
 const mostrarCarrito = () => {
-  let tablaHTML = "";
-  const tbody = document.querySelector("#tabla");
-  const carrito = JSON.parse(localStorage.getItem("prodCarrito")) || []
+  let tablaCarrito = "";
   if (carrito.length >= 0) {
   carrito.forEach((producto) =>
-        (tablaHTML += armarCarrito(producto)),
+        (tablaCarrito += armarCarrito(producto)),
     );
-    tbody.innerHTML = tablaHTML;
+    tbody.innerHTML = tablaCarrito;
   }
   if (carrito.length === 0) {
     let mensaje = document.querySelector(".carrito-p");
@@ -16,12 +15,18 @@ const mostrarCarrito = () => {
     <p>¡Aun no cargaste productos a tu carrito!</p>
     `;
   }
+  totalAPagar()
 };
-
 mostrarCarrito()
 
+vaciarCarrito.addEventListener("click", () => {
+  carrito.length = [];
+  localStorage.clear();
+  mostrarCarrito();
+});
 
-function activarBotonesDelete() {
+
+function btnEliminar() {
   const buttonsDelete = document.querySelectorAll("button.btn-delete-cart.btn-add");
   buttonsDelete.forEach(btn => {
     btn.addEventListener("click", () => {
@@ -30,26 +35,17 @@ function activarBotonesDelete() {
         carrito.splice(pos, 1);
         localStorage.setItem("prodCarrito", JSON.stringify(carrito));
         mostrarCarrito();
-        activarBotonesDelete();
+        btnEliminar();
       }
     });
   });
 }
-activarBotonesDelete();
+btnEliminar();
 
-
-vaciarCarrito.addEventListener("click", () => {
-  carrito.length = [];
-  localStorage.clear();
-  mostrarCarrito();
-});
-
-// function calcularTotal() {
-//   // console.log('producto 1111',producto)
-//   let total = document.querySelector("h4#total");
-//   let totalCompra = carrito.reduce((acc, producto) => acc + producto.precio, 0);
-//   total.innerText = `Total: $ ${totalCompra.toLocaleString()} `;
-// }
+function totalAPagar(){
+  let precioTotal = document.querySelector("p#total");
+  precioTotal.innerText = carrito.reduce((acc, producto)=> acc + producto.precio, 0).toFixed(2)
+}
 
 // 
 const botonComprar = document.querySelector("#btnCompra");

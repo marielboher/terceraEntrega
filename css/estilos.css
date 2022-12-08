@@ -592,13 +592,25 @@ footer a:hover {
     border: none;
     height: 30px;
     width: 90px;
-    background-color: #ffebf0;
+    background-color: #ffff;
     color: #465b52;
     border-radius: 5px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     font-size: 11px;
 }
+.total-center{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-right: 180px;
+}
+.total-center p{
+    color: #088170;
+    font-size: 15px;
+    padding: 2px;
+    background-color: rgba(255, 255, 255, 0.493);
 
+}
 .total-compra{
     display: flex;
     align-items: center;
@@ -615,11 +627,7 @@ footer a:hover {
     font-size: 13px;
     font-weight: 700;
 }
-.total-center{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+
 .carrito-p{
     text-align: center;
     color: #465b52;
