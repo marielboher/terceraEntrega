@@ -1,8 +1,13 @@
 const vaciarCarrito = document.querySelector("#vaciarCarrito");
 const tbody = document.querySelector("#tabla");
+let mensaje = document.querySelector(".carrito-p");
+let compra = new Compra();
+
+
 
 const mostrarCarrito = () => {
   let tablaCarrito = "";
+
   if (carrito.length >= 0) {
   carrito.forEach((producto) =>
         (tablaCarrito += armarCarrito(producto)),
@@ -10,21 +15,25 @@ const mostrarCarrito = () => {
     tbody.innerHTML = tablaCarrito;
   }
   if (carrito.length === 0) {
-    let mensaje = document.querySelector(".carrito-p");
+    let mostrarTotal = document.querySelector('#total');
+    mostrarTotal.innerHTML = '0'
     mensaje.innerHTML = `
     <p>¡Aun no cargaste productos a tu carrito!</p>
     `;
   }
-  totalAPagar()
+  compra.totalCompra()
 };
 mostrarCarrito()
 
-vaciarCarrito.addEventListener("click", () => {
+
+const vaciarCarro = () => {
+  vaciarCarrito.addEventListener("click", () => {
   carrito.length = [];
   localStorage.clear();
   mostrarCarrito();
 });
-
+}
+vaciarCarro()
 
 function btnEliminar() {
   const buttonsDelete = document.querySelectorAll("button.btn-delete-cart.btn-add");
@@ -42,26 +51,16 @@ function btnEliminar() {
 }
 btnEliminar();
 
-function totalAPagar(){
-  let precioTotal = document.querySelector("p#total");
-  precioTotal.innerText = carrito.reduce((acc, producto)=> acc + producto.precio, 0).toFixed(2)
-}
 
-// 
-const botonComprar = document.querySelector("#btnCompra");
+//finalizacion de compra
 
-botonComprar.addEventListener("click", () => {
-  Swal.fire({
-    icon: "info",
-    title: "¿Desea confirmar su compra?",
-    showCancelButton: true,
-    confirmButtonText: "Confirmar",
-    cancelButtonText: `Cancelar`,
-  }).then((result) => {
-    if (result.isConfirmed) {
-      Swal.fire("Saved!", "", "success");
-    } else if (result.isDenied) {
-      Swal.fire("Changes are not saved", "", "info");
-    }
-  });
-});
+  const btnCompraCarrito = document.querySelector("#continuarCompra")
+  btnCompraCarrito.addEventListener("click", compra.finalizarCompra())
+
+  
+// function confirmarCompra(){
+//   const aceptarCompra = document.querySelector('#aceptarCompra')
+//   aceptarCompra.addEventListener('click', () => {
+//   alerta(`'${resultado.nombre}' se agregó al carrito`, "#088170");
+// })
+// }
